@@ -1,0 +1,25 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `「感謝鍾志平先生創立鵬程創意獎學金，且很感恩能受到評審老師們的肯定，成爲今屆鵬程創意獎學金的得獎者之一，這無疑對我是很大的肯定以成爲我日後的藝術創作的推動力。在此無法一一感謝，但依然衷心感謝我的諮詢人老師Hector，給予我很多空間創作的書院以及我身邊不斷鼓勵我給予我自信的朋友。
+
+「秋夢」充滿着屬於我自己的浪漫，這樣的藝術創作是我最喜歡且最享受的。在中四入校然後隨着時間不斷的發酵，我亦跟着時間慢慢成長，日後當然還有很多事等着我來接觸學習，但來年我依然會帶着這份對藝術的熱誠，自己的浪漫繼續創作。而這筆獎學金將會作爲我來年升學的學費儲蓄，雖然對於前途还是比較搖擺不定，但這筆資金會好好保存以便我日後的打算。最後再次感謝鍾志平先生，香港兆基創意書院以及一路上我亦師亦友的各位夥伴。」`;
+const consultant = "是一件十分難得的內容及形式相輔相成的作品。俞嘉欣刻意安排於晚上入黑後做Presentation，讓Presentation成為一場表演 (Performance)，亦是一次偶發藝術(Happening Art)。俞嘉欣不俗的色感及造型能力使每一張繪畫都能呈現一定的敍事能力及情感，兼具多樣而合理的媒介以及真切的情感。";
+const consultantTitle = "諮詢人 | Hector老師";
+const gallery = [
+  "/images/21-22/俞嘉欣1.webp",
+  "/images/21-22/俞嘉欣3.webp",
+];
+---
+<AwardeeLayout
+  title="俞嘉欣 | 21/22 鵬程創意獎學金"
+  name="俞嘉欣"
+  englishName="Yu Jiaxin"
+  year="21/22"
+  category="視覺傳意"
+  photo="/images/21-22/俞嘉欣.webp"
+  description={description}
+  gallery={gallery}
+  class="5Y"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

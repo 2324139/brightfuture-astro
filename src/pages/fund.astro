@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="鵬程慈善基金 | 鵬程創意獎學金 BFCS">
+  <PageHero title="鵬 程 慈 善 基 金" subtitle="BRIGHT FUTURE CHARITABLE FOUNDATION" />
+
+  <section class="content-section">
+    <div class="content-inner">
+      <div class="logo-box">
+        <img src="/images/bfcs-logo.png" alt="鵬程慈善基金標誌" />
+      </div>
+
+      <h2>成立背景</h2>
+      <p>基金由鍾志平博士創立。鍾博士在年青的時候，因為家庭環境的關係，未完成中四課程已開始在社會工作謀生以幫補家計。工作讓他深深體會到「書到用時方恨少」的道理，所以一直不斷進修以自我增值。過往的經歷令鍾博士明白到終身學習的重要性，因為只有把自己裝備好，才能保持競爭力，好好迎接及把握機遇。他成立鵬程慈善基金，就是要支持不同地區的教育發展工作。基金除了資助積極學習的學生外，亦分別向學業成績和全人發展方面表現優異的學生頒發獎學金予以鼓勵。</p>
+
+      <div class="purpose-images-row">
+        <div class="purpose-col">
+          <h2>成立目的</h2>
+          <ul class="purpose-list">
+            <li>提升本地的教育質素</li>
+            <li>支持及支援本地社會福利服務</li>
+            <li>促進及支持不同形式的教育發展</li>
+            <li>協助有各樣困難的青少年在本地及海外學習</li>
+          </ul>
+        </div>
+        <img src="/images/aboutus1.webp" alt="鵬程慈善基金活動照片1" class="purpose-img purpose-img-top" />
+        <img src="/images/VTC_TL07.webp" alt="鵬程慈善基金活動照片2" class="purpose-img purpose-img-bottom" />
+      </div>
+
+      <h2>基金管理</h2>
+      <p>由鍾志平博士創立的鵬程慈善基金，一直積極支持不同地區的教育發展和各項相關工作，慷慨捐款，惠及不同院校，當中包括香港理工大學、香港中文大學、香港科技大學、香港城市大學、嶺南大學、恒生管理學院、職業訓練局、香港專業教育學院、香港知專設計學院、邱子文高中學校、兆基創意書院等；另外亦分別在內地捐贈助學金及於英國華威大學設立獎學金。</p>
+      <p>基金自成立以來，對積極學習的學生頒發獎學金，如多項設計獎學金、傑出學生獎等，分別向學業成績和全人發展方面表現優異的學生作出鼓勵。為了擴闊學生的視野，基金先後贊助學生遠赴南極、北極、珠穆朗瑪峰等不同地區作極地探索；同時亦贊助學生參加世界技能大賽和外展訓練計劃等。這種種寶貴而獨特的體驗，相信可以讓學生終生受用。</p>
+
+      <div class="website-link">
+        <a href="https://www.brightfuture.org.hk" target="_blank">brightfuture.org.hk</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .content-section { padding: 70px 40px; background: #fff; }
+  .content-inner { max-width: 900px; margin: 0 auto; }
+  .logo-box { text-align: center; margin-bottom: 50px; }
+  .logo-box img { max-width: 300px; height: auto; }
+  .content-section h2 { font-size: 20px; color: #806203; letter-spacing: 4px; margin: 50px 0 25px; font-weight: 500; border-left: 4px solid #c9922b; padding-left: 12px; }
+  .content-section p { font-size: 15px; line-height: 2; margin-bottom: 20px; color: #20201E; }
+  .purpose-list { list-style: none; margin: 20px 0; }
+  .purpose-list li { padding: 12px 0; font-size: 15px; border-bottom: 1px solid #f0ede8; padding-left: 25px; position: relative; color: #20201E; }
+  .purpose-list li::before { content: '✓'; color: #806203; position: absolute; left: 0; font-weight: bold; }
+  .website-link { text-align: center; margin-top: 50px; }
+  .website-link a { font-size: 18px; color: #806203; text-decoration: none; font-weight: 500; }
+  .website-link a:hover { text-decoration: underline; }
+  .purpose-col {grid-row: 1/3;}
+  .purpose-images-row { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 40px; align-items: start; margin: 50px 0; }
+  .purpose-col h2 { margin-top: 0; }
+  .purpose-img { width: 100%; height: auto; border-radius: 4px; }
+  .purpose-img-top { grid-column: 2; grid-row: 1; }
+  .purpose-img-bottom { grid-column: 2; grid-row: 2; margin-top: 20px; }
+
+  @media (max-width: 768px) {
+    .content-section { padding: 40px 20px; }
+    .purpose-col {grid-row: 2;}
+    .purpose-images-row { grid-template-columns: 1fr; gap: 20px; }
+    .purpose-img-top { grid-column: 1; grid-row: 1; }
+    .purpose-img-bottom { grid-column: 1; grid-row: 3; margin-top: 20px; }
+  }
+</style>

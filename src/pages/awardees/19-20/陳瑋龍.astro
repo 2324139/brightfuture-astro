@@ -1,0 +1,26 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `這一年，經歷動盪、無力、未知事情，能夠再次獲獎是我的榮幸，初時我對此獎學金與疫情中的各位一樣，硬著頭腦去參與，希望今年的作品比往年有誠意和進步，幸好得到評審和贊助人認可，實在讓我高興，亦好像為我在書院生活畫上一個句號，藉此我很感謝贊助人鍾志平博士、評審和(李民傑和余榮基)給我這個機會。
+
+在這一年裏，我嘗試以不同方式去創作，影像藝術、電影、裝置的方式創作，艱辛一年面對社會、疫情、文憑試我也堅持創作，全靠老師同學支持，由其是感謝在《謝生》中疫情嚴峻，中五李念聰同學也與我走上街頭無畏無懼創作，這亦是我相信影像因由，能夠無懼相信生命的真實和可能。
+
+完結，開始，未來我有可能到香港城市大學或香港浸會大學浸淫於影像多媒體中，此次獲獎也能夠減輕學費和創作上金錢負擔。面對兩個地方的未知，如同社運時，我會帶著過去經驗走下去，相信生命可能。`;
+const consultant = "李民傑和余榮基";
+const consultantTitle = "諮詢人";
+const gallery = [
+  "/images/19-20/陳瑋龍1.webp",
+  "/images/19-20/陳瑋龍2.webp",
+];
+---
+<AwardeeLayout
+  title="陳瑋龍 | 19/20 鵬程創意獎學金"
+  name="陳瑋龍"
+  year="19/20"
+  category="錄像 | Film & Video"
+  photo="/images/19-20/陳瑋龍.webp"
+  description={description}
+  gallery={gallery}
+  class="6E"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

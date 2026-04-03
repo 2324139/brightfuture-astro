@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="結果公佈 | 鵬程創意獎學金 BFCS">
+  <PageHero title="結 果 公 佈" subtitle="RESULTS" />
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>結果公佈及獎學金發放安排</h2>
+      
+      <div class="result-box">
+        <div class="result-item">
+          <h3>中四及中五</h3>
+          <p>結業禮</p>
+        </div>
+        <div class="result-item">
+          <h3>中六</h3>
+          <p>畢業禮</p>
+        </div>
+      </div>
+
+      <h2>得獎作品展示</h2>
+      <p>獲發獎學金的學生作品集有機會在以下平台展示：</p>
+      <ul class="result-list">
+        <li>學校網頁</li>
+        <li>概念士多</li>
+        <li>鵬程慈善基金會網頁</li>
+      </ul>
+
+      <h2>注意事項</h2>
+      <ul class="result-list">
+        <li>所有得獎者將獲個別通知</li>
+        <li>未能出席頒獎禮之得獎者，獎學金將以其他方式發放</li>
+        <li>如對結果有任何查詢，請與書院聯絡</li>
+      </ul>
+
+      <div class="note-box">
+        <p>* 此獎學金每年開放申請，詳情請留意書院公告。</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .content-section { padding: 70px 40px; background: #fff; }
+  .content-inner { max-width: 900px; margin: 0 auto; }
+  .content-section h2 { font-size: 20px; color: #806203; letter-spacing: 4px; margin: 50px 0 30px; text-align: center; font-weight: 500; border-left: 4px solid #c9922b; padding-left: 12px; }
+  .content-section p { font-size: 15px; line-height: 2; color: #20201E; margin-bottom: 15px; }
+  .result-box { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+  .result-item { background: #faf9f7; padding: 40px; text-align: center; border-radius: 4px; border: 1px solid #e8d5a3; }
+  .result-item h3 { font-size: 18px; color: #806203; letter-spacing: 2px; margin-bottom: 15px; font-weight: 500; }
+  .result-item p { font-size: 16px; color: #20201E; margin: 0; }
+  .result-list { list-style: none; margin: 20px 0; }
+  .result-list li { padding: 12px 0; font-size: 15px; border-bottom: 1px solid #f0ede8; padding-left: 20px; position: relative; color: #20201E; }
+  .result-list li::before { content: '•'; color: #806203; position: absolute; left: 0; }
+  .note-box { background: #faf9f7; padding: 20px; border-radius: 4px; margin-top: 40px; border-left: 4px solid #c84031; }
+  .note-box p { font-size: 14px; color: #666; margin: 0; }
+  
+  @media (max-width: 768px) {
+    .result-box { grid-template-columns: 1fr; }
+    .content-section { padding: 40px 20px; }
+  }
+</style>

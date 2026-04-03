@@ -1,0 +1,23 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `申請這次的獎學金，令我可以重新整理、檢視自己以往的作品。其實也沒抱著太大期望，所以知道自己得獎時也挺高興，戶口終於不是歸零了。畢業後，我將會修讀Hong Kong Art School的高級文憑課程，得到這筆獎學金，我會儲蓄起來，用作往後創作購買物料。在此感謝獎學金的贊助人鍾志平博士，使我有機會獲得這筆獎學金。`;
+const consultant = "（未具名）";
+const consultantTitle = "諮詢人";
+const gallery = [
+  "/images/19-20/麥詩琦1.webp",
+  "/images/19-20/麥詩琦2.webp",
+  "/images/19-20/麥詩琦3.webp",
+];
+---
+<AwardeeLayout
+  title="麥詩琦 | 19/20 鵬程創意獎學金"
+  name="麥詩琦"
+  year="19/20"
+  category="攝影 | Photography"
+  photo="/images/19-20/麥詩琦.webp"
+  description={description}
+  gallery={gallery}
+  class="6S"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

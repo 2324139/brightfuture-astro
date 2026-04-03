@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="甄選過程 | 鵬程創意獎學金 BFCS">
+  <PageHero title="甄 選 過 程" subtitle="SELECTION" />
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>甄選過程</h2>
+
+      <div class="phase-box">
+        <h3>1. 第一階段：校內評審</h3>
+        <p>校內評審團成員包括：</p>
+        <ul>
+          <li>校長級成員</li>
+          <li>共創團隊成員</li>
+          <li>各學科代表</li>
+          <li>4 科 CPOP 學科代表</li>
+          <li>DCA 班老師代表</li>
+          <li>有興趣參與老師</li>
+        </ul>
+        <p>校內評審標準：</p>
+        <ul>
+          <li>作品質素</li>
+          <li>能否體現書院價值</li>
+          <li>學生在學表現</li>
+        </ul>
+      </div>
+
+      <div class="phase-box">
+        <h3>2. 第二階段：校外評審面試</h3>
+        <p>入圍同學需要參與校外評審面試，評審團成員包括：</p>
+        <ul>
+          <li>鵬程慈善基金代表</li>
+          <li>書院校董會成員</li>
+          <li>專業藝術工作者</li>
+          <li>社區代表</li>
+        </ul>
+        <p>面試內容包括：</p>
+        <ul>
+          <li>作品理念及創作過程分享</li>
+          <li>書院價值的體現</li>
+          <li>未來學習計劃</li>
+        </ul>
+      </div>
+
+      <div class="phase-box">
+        <h3>3. 評審準則</h3>
+        <p>評審團會根據以下準則作出評核：</p>
+        <ul>
+          <li>作品原創性及創意表達</li>
+          <li>作品與書院價值的聯繫（人文視野、關懷社會、活學活用、實驗實幹）</li>
+          <li>創作過程及心思</li>
+          <li>學生在學期間的整體表現</li>
+        </ul>
+      </div>
+
+      <div class="notice-box">
+        <p>評審結果為最終決定，參加者不得異議。如有疑問，請與書院聯絡。</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .content-section { padding: 70px 40px; background: #fff; }
+  .content-inner { max-width: 900px; margin: 0 auto; }
+  .content-section h2 { font-size: 20px; color: #806203; letter-spacing: 4px; margin-bottom: 40px; text-align: center; font-weight: 500; border-left: 4px solid #c9922b; padding-left: 12px; }
+  .phase-box { background: #faf9f7; padding: 40px; border-radius: 4px; margin-bottom: 40px; border-left: 4px solid #806203; }
+  .phase-box h3 { font-size: 18px; color: #806203; letter-spacing: 2px; margin-bottom: 20px; font-weight: 500; }
+  .phase-box p { font-size: 15px; line-height: 1.8; margin-bottom: 15px; color: #20201E; }
+  .phase-box ul { list-style: none; margin: 15px 0; }
+  .phase-box li { padding: 8px 0; font-size: 15px; border-bottom: 1px solid #e8e4dc; padding-left: 20px; position: relative; color: #20201E; }
+  .phase-box li::before { content: '•'; color: #806203; position: absolute; left: 0; }
+  .notice-box { background: #faf9f7; padding: 20px; border-radius: 4px; margin-top: 40px; border-left: 4px solid #c84031; }
+  .notice-box p { font-size: 14px; color: #666; margin: 0; }
+  
+  @media (max-width: 768px) {
+    .content-section { padding: 40px 20px; }
+    .phase-box { padding: 25px; }
+  }
+</style>

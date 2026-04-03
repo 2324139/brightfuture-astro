@@ -1,0 +1,24 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `「感謝贊助人鍾志平教授提供這個獎學金，得到這個獎學金感到十分榮幸，亦肯定了我在創作中的努力。準備獎學金的過程是一個很好的學習機會。在過程中獲得了展示和說明作品的機會，也讓我有機會整理創作的過程和梳理創作時沒有多想的思緒、得到評審們寶貴的評語和肯定。我會好好利用這筆獎學金繼續學習各種媒介，發掘不同的可能性，幫助我創作更多更好的作品。」`;
+const consultant = "（未具名）";
+const consultantTitle = "諮詢人";
+const gallery = [
+  "/images/21-22/張芷藍1.webp",
+  "/images/21-22/張芷藍2.webp",
+  "/images/21-22/張芷藍3.webp",
+];
+---
+<AwardeeLayout
+  title="張芷藍 | 21/22 鵬程創意獎學金"
+  name="張芷藍"
+  englishName="Cheung Tsz Lam"
+  year="21/22"
+  category="視覺傳意"
+  photo="/images/21-22/張芷藍.webp"
+  description={description}
+  gallery={gallery}
+  class="6Y"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

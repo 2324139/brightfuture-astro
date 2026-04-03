@@ -1,0 +1,24 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `「感謝鍾志平先生創立鵬程創意獎學金，且很感恩能受到評審老師們的肯定，成爲今屆鵬程創意獎學金的得獎者之一，這無疑對我是很大的肯定以成爲我日後的藝術創作的推動力。在此無法一一感謝，但依然衷心感謝我的諮詢人老師Hector，給予我很多空間創作的書院以及我身邊不斷鼓勵我給予我自信的朋友。」`;
+const consultant = "Hector";
+const consultantTitle = "諮詢人 | Hector老師";
+const gallery = [
+  "/images/21-22/吳心喬1.webp",
+  "/images/21-22/吳心喬2.webp",
+  "/images/21-22/吳心喬3.webp",
+];
+---
+<AwardeeLayout
+  title="吳心喬 | 21/22 鵬程創意獎學金"
+  name="吳心喬"
+  englishName="Ng Sam Kiu"
+  year="21/22"
+  category="經驗性質"
+  photo="/images/21-22/吳心喬.webp"
+  description={description}
+  gallery={gallery}
+  class="6X"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

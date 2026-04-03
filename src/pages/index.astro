@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+// Statically glob all webp files from all year folders using Node fs
+const imagesDir = join(process.cwd(), 'src', 'images');
+const years = readdirSync(imagesDir).filter(f => /^\d{2}-\d{2}$/.test(f));
+const awardeeData = [];
+
+for (const year of years) {
+  const yearDir = join(imagesDir, year);
+  const files = readdirSync(yearDir).filter(f => f.endsWith('.webp'));
+  for (const file of files) {
+    const nameRaw = file.replace(/\.webp$/, '');
+    const name = nameRaw.replace(/(\d+)$/, '');
+    awardeeData.push({
+      year,
+      name,
+      src: `/images/${year}/${file}`
+    });
+  }
+}
+---
+<Layout title="鵬程創意獎學金 | Bright Future Creativity Scholarship">
+  <section class="hero">
+    <div class="hero-left">
+      <img src="/images/ebd955_037c71a50200498faa91e5634cb755ac-mv2.webp" alt="Hero Image" />
+    </div>
+    <div class="hero-right">
+      <p class="school">HKICC Lee Shau Kee School of Creativity<br />香 港 兆 基 創 意 書 院</p>
+      <h1>Bright Future Creativity Scholarship<br />鵬 程 創 意 獎 學 金</h1>
+      <div class="divider"></div>
+      <a href="/apply" class="hero-btn">申請資訊</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>關 於 獎 學 金</h2>
+    <p>創意書院校董會成員鍾志平教授一向致力推廣藝術文化及發展青少年事務。鍾教授於2018年校董會會議上同意成立鵬程創意獎學金 BFCS（Bright Future Creativity Scholarship），以嘉許在藝術創作方面有傑出表現的香港兆基創意書院同學。</p>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <h2>歷 屆 得 獎 者</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+
+  <script define:vars={{ awardeeData }}>
+    const shuffled = awardeeData.sort(() => Math.random() - 0.5);
+    shuffled.slice(0, 8).forEach(({ year, name, src }) => {
+      const figure = document.createElement('figure');
+      figure.className = 'gallery-item';
+
+      const link = document.createElement('a');
+      link.href = `/awardees/${year}/${name}`;
+      link.style.textDecoration = 'none';
+      link.style.display = 'block';
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = name || 'Awardee';
+
+      const caption = document.createElement('figcaption');
+      caption.innerHTML = `<span class="award-year">${year}</span><span class="award-name">${name}</span>`;
+
+      figure.appendChild(img);
+      figure.appendChild(caption);
+      link.appendChild(figure);
+      document.getElementById('gallery-grid').appendChild(link);
+    });
+  </script>
+<section class="criteria" id="criteria">
+    <h2>成 為 獎 學 金 得 主</h2>
+    <div class="criteria-grid">
+      <div class="criteria-box red">
+        <h3>申 請 條 件</h3>
+        <ul>
+          <li>現正就讀香港兆基創意書院（中四至中六）</li>
+          <li>藝術創作能呈現書院價值：人文視野、關懷社會、活學活用、實驗實幹</li>
+          <li>提交的「主要作品」必須為就讀書院期間所創作的原創作品</li>
+        </ul>
+      </div>
+      <div class="criteria-box dark">
+        <h3>遴 選 原 則</h3>
+        <ul>
+          <li>主要以作品質素及作品能否體現任何一項書院價值為判斷</li>
+          <li>同學的在學表現及學習態度為重要參考</li>
+          <li>不考慮家庭經濟狀況</li>
+          <li>不考慮學生在學期間得獎次數</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { display: flex; min-height: 500px; position: relative; }
+  .hero-left { flex: 1; background: #151414; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero-left img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+  .hero-right { flex: 1; background: linear-gradient(180deg, #d4a843 0%, #b8860b 40%, #806203 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; color: #fff; text-align: center; }
+  .hero-right img { display: none; }
+  .school { font-size: 14px; letter-spacing: 2px; opacity: 0.9; margin-bottom: 20px; }
+  .hero h1 { font-size: 36px; font-weight: 700; letter-spacing: 6px; margin-bottom: 30px; line-height: 1.4; }
+  .divider { width: 200px; height: 2px; background: rgba(255,255,255,0.5); margin-bottom: 30px; }
+  .hero-btn { display: inline-block; width: 160px; height: 160px; border-radius: 50%; background: #3d3d3d; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; letter-spacing: 2px; transition: background 0.3s; }
+  .hero-btn:hover { background: #2a2a2a; }
+  .about { padding: 90px 40px; text-align: center; background: #fff; }
+  .about h2 { font-size: 22px; color: #806203; letter-spacing: 4px; margin-bottom: 50px; font-weight: 500; }
+  .about p { max-width: 680px; margin: 0 auto; font-size: 15px; color: #20201E; line-height: 2; }
+  .gallery { padding: 70px 40px; background: #fff; }
+  .gallery h2 { font-size: 22px; color: #806203; letter-spacing: 4px; text-align: center; margin-bottom: 50px; font-weight: 500; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1100px; margin: 0 auto; }
+  :global(.gallery-item) { position: relative; overflow: hidden; border-radius: 4px; margin: 0; }
+  :global(.gallery-item img) { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s; }
+  :global(.gallery-item:hover img) { transform: scale(1.04); }
+  :global(.gallery-item figcaption) {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 12px 14px;
+    opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  :global(.gallery-item:hover figcaption) { opacity: 1; }
+  :global(.gallery-item figcaption .award-year) {
+    font-size: 12px; color: #d4a843; font-weight: 700; letter-spacing: 1px;
+    transform: translateY(8px); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, color 0.2s;
+    opacity: 0;
+  }
+  :global(.gallery-item figcaption .award-name) {
+    font-size: 14px; color: #fff; font-weight: 500;
+    word-break: break-all;
+    transform: translateY(12px); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.05s, opacity 0.4s ease 0.05s;
+    opacity: 0;
+  }
+  :global(.gallery-item:hover figcaption .award-year) {
+    transform: translateY(0); opacity: 1;
+  }
+  :global(.gallery-item:hover figcaption .award-name) {
+    transform: translateY(0); opacity: 1;
+  }
+  .criteria { padding: 80px 40px; background: #faf9f7; }
+  .criteria h2 { font-size: 22px; color: #806203; letter-spacing: 4px; text-align: center; margin-bottom: 50px; font-weight: 500; }
+  .criteria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; }
+  .criteria-box { background: #fff; padding: 35px 40px; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .criteria-box.red { border-left: 4px solid #c84031; }
+  .criteria-box.dark { border-left: 4px solid #3d3d3d; }
+  .criteria-box h3 { font-size: 18px; color: #806203; margin-bottom: 24px; letter-spacing: 3px; font-weight: 500; }
+  .criteria-box ul { list-style: none; }
+  .criteria-box li { padding: 10px 0; font-size: 14px; color: #20201E; border-bottom: 1px solid #f0ede8; }
+  .criteria-box li:last-child { border-bottom: none; }
+  
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; min-height: auto; }
+    .hero-left { height: 250px; }
+    .hero-right { padding: 30px 20px; }
+    .hero h1 { font-size: 24px; letter-spacing: 4px; }
+    .hero-btn { width: 120px; height: 120px; font-size: 14px; }
+    .gallery { padding: 0; }
+    .gallery h2 { margin-bottom: 30px; }
+    .gallery-grid { grid-template-columns: 1fr; gap: 0; max-width: 100%; }
+    :global(.gallery-item) { border-radius: 0; }
+    :global(.gallery-item img) { border-radius: 0; }
+    :global(.gallery-item figcaption) {
+      opacity: 1 !important;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+    }
+    :global(.gallery-item figcaption .award-year),
+    :global(.gallery-item figcaption .award-name) {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+    :global(.gallery-item figcaption .award-year) { font-size: 16px; }
+    :global(.gallery-item figcaption .award-name) { font-size: 18px; }
+    :global(.gallery-item:hover figcaption) { opacity: 0 !important; }
+    :global(.gallery-item:hover figcaption .award-year),
+    :global(.gallery-item:hover figcaption .award-name) {
+      transform: translateY(8px) !important;
+      opacity: 0 !important;
+    }
+    .criteria-grid { grid-template-columns: 1fr; }
+  }
+</style>

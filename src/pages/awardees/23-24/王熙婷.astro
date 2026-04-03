@@ -1,0 +1,20 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = "感謝基金會頒發獎學金給我。這年來，我經歷了很多高低起跌，身邊的人來來去去，身邊的事一件又一件地叠在一起，令我一時之間不知該如何是好。在這個迷惘的時間，我選擇用舞蹈來梳理自己的情緒。在編舞的過程中，我漸漸明白到，每一個人都有屬於自己的節奏，不必刻意改變。\n\n感謝舞蹈，讓我學會如何與自己相處。";
+const gallery = [
+  "/images/23-24/王熙婷1.webp",
+  "/images/23-24/王熙婷2.webp",
+  "/images/23-24/王熙婷3.webp"
+];
+---
+<AwardeeLayout
+  title="王熙婷 | 23/24 鵬程創意獎學金"
+  name="王熙婷"
+  englishName="Wong Hei Ting"
+  year="23/24"
+  category="表演"
+  class="4K"
+  photo="/images/23-24/王熙婷.webp"
+  description={description}
+  gallery={gallery}
+/>

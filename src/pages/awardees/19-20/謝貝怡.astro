@@ -1,0 +1,22 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `首先感謝鍾志平博士成立了鵬程創意獎學。我向來對自己的創作，由其是音樂創作沒有甚麼信心，起初被邀請申請鵬程創意獎學金，我簡直覺得是天方夜談。後來在Jasmine的鼓勵和啟發下，我重新對自己的作品建立信心，藉此多謝Jasmine對我作品的肯定。是次獲得鵬程創意獎學金，除了在經濟上對我的創作起了莫大幫助，更為我的作品和意念得到一個肯定，令我對自己和作品建立信心，更為我增強了創作的動力。我打算把部分奬學金儲起來，作為將來創作的資金。在未來三年我會投身社會工作。我會繼續創作，待儲存足夠的經驗和學費後，我打算到海外修讀視覺藝術，鑽研不同的媒介。`;
+const consultant = "Jasmine";
+const consultantTitle = "諮詢人 | Jasmine";
+const gallery = [
+  "/images/19-20/謝貝怡1.webp",
+  "/images/19-20/謝貝怡2.webp",
+];
+---
+<AwardeeLayout
+  title="謝貝怡 | 19/20 鵬程創意獎學金"
+  name="謝貝怡"
+  year="19/20"
+  category="音樂 | Music"
+  photo="/images/19-20/謝貝怡.webp"
+  description={description}
+  gallery={gallery}
+  class="6C"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

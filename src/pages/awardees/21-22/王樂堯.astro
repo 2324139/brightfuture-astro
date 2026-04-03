@@ -1,0 +1,20 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `感謝鐘志平教授成立鵬程創意獎學金、感謝各位評審的肯定還有老師們的指導。希望未來繼續好好努力，同時也不要太努力。這份作品是我盡力以影像媒介精進描述自己感受的成果，也非常感謝Felix不厭其煩地與我分析文本、提供方向及建議去完成這篇論文。兩者放在一起，才得以令我對自己的狀態有更全面的了解。期望未來自己的作品也是向著自我往內挖。`;
+const gallery = [
+  "/images/21-22/王樂堯1.webp",
+  "/images/21-22/王樂堯2.webp",
+  "/images/21-22/王樂堯3.webp",
+];
+---
+<AwardeeLayout
+  title="王樂堯 | 21/22 鵬程創意獎學金"
+  name="王樂堯"
+  englishName="Wang Leyao"
+  year="21/22"
+  category="錄像"
+  photo="/images/21-22/王樂堯.webp"
+  description={description}
+  gallery={gallery}
+  class="5Y"
+/>

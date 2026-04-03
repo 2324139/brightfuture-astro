@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+<Layout title="關於獎學金 | 鵬程創意獎學金 BFCS">
+  <PageHero title="鵬 程 創 意 獎 學 金" subtitle="BRIGHT FUTURE CREATIVITY SCHOLARSHIP" />
+
+  <section class="content">
+    <div class="content-inner">
+      <h2>背景及目標</h2>
+      <p>創意書院校董會成員鍾志平教授一向致力推廣藝術文化及發展青少年事務。鍾教授於2018年校董會會議上同意成立鵬程創意獎學金（Bright Future Creativity Scholarship），以嘉許在藝術創作方面有傑出表現的香港兆基創意書院同學。</p>
+      <p>創意書院是一所研習藝術、文化、設計的直資高中，以創意藝術為教育目標，不單是培訓藝術、文化、設計專才，宏旨更在培育具文化素養的公民，讓學生成為活得真實、關懷世界、和追求美好價值的人。</p>
+
+      <h2>書院四項價值</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-icon">i</div>
+          <h3>人文視野</h3>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">ii</div>
+          <h3>關懷社會</h3>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">iii</div>
+          <h3>活學活用</h3>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">iv</div>
+          <h3>實驗實幹</h3>
+        </div>
+      </div>
+
+      <p>書院希望藉此獎學金鼓勵同學創作更多呼應書院價值的作品。</p>
+      <p>同學可自薦或受推薦參加此獎學金。如參與，同學請提交一份「主要作品」，以展示自己的創作主題及關懷；如「主要作品」由圍繞同一命題的系列作品組成，評審團會以整個作品組合作出評核，同學務必留意作品組合之間的聯繫和關係，並作出準確的選擇。</p>
+      <p>如有需要，同學可以連同其他輔助資料，如視覺日記、作品集、資料搜集的整理、發展過程的紀錄、實驗紀錄、過去相關的創作等等，以助評審團了解同學的創作歷程及對創作的想法。</p>
+
+      <h2>受惠對象</h2>
+      <div class="target-box">
+        <p>在藝術方面</p>
+        <p>具卓越表現及成就的</p>
+        <p>香港兆基創意書院</p>
+        <p>中四至中六學生</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-label">24/25學年<br/>獎學金名額</div>
+          <div class="stat-value">10位</div>
+          <div class="stat-note">（每級人數不設上限）<br/>（若該學年沒有合適人選，則不會頒發獎學金）<br/>（每位學生每年只限申請一次）<br/>（每位學生在學期間得獎次數不限）</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">獎學金金額</div>
+          <div class="stat-value">$10,000</div>
+          <div class="stat-note">每位學生</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .content { padding: 70px 40px; background: #fff; }
+  .content-inner { max-width: 900px; margin: 0 auto; }
+  .content h2 {
+    font-size: 20px; color: #806203; letter-spacing: 4px;
+    margin-bottom: 20px; margin-top: 40px; font-weight: 500;
+    border-left: 4px solid #c9922b; padding-left: 12px;
+  }
+  .content p { font-size: 15px; line-height: 2; margin-bottom: 15px; color: #333; }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 30px 0; }
+  .value-item { text-align: center; padding: 20px; border: 1px solid #e8d5a3; border-radius: 8px; background: #fffdf5; }
+  .value-icon { font-size: 28px; color: #c9922b; font-weight: bold; margin-bottom: 10px; }
+  .value-item h3 { font-size: 16px; color: #806203; font-weight: 500; letter-spacing: 2px; }
+  .target-box { background: #fffdf5; border: 2px solid #c9922b; padding: 30px; text-align: center; margin: 20px 0; }
+  .target-box p { font-size: 18px; color: #806203; margin: 5px 0; letter-spacing: 3px; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+  .stat-item { background: #fffdf5; border: 1px solid #e8d5a3; padding: 25px; text-align: center; border-radius: 8px; }
+  .stat-label { font-size: 14px; color: #806203; letter-spacing: 2px; margin-bottom: 15px; line-height: 1.6; }
+  .stat-value { font-size: 42px; color: #c9922b; font-weight: bold; margin-bottom: 10px; }
+  .stat-note { font-size: 11px; color: #888; line-height: 1.8; letter-spacing: 1px; }
+  @media (max-width: 768px) {
+    .content { padding: 40px 20px; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+</style>

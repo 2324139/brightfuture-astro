@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+<Layout title="申請資訊 | 鵬程創意獎學金 BFCS">
+  <PageHero title="申 請 資 訊" subtitle="APPLICATION INFORMATION" />
+
+  <section class="content">
+    <div class="content-inner">
+      <h2>申請資格</h2>
+      <p>獲提名或自薦申請此獎學金的學生必須具備以下條件：</p>
+      <ul>
+        <li>現正就讀香港兆基創意書院（中四至中六）</li>
+        <li>申請人的作品或其創作過程符合至少一項書院價值，即：<br/>
+           i. 人文視野 &nbsp;&nbsp;&nbsp;&nbsp; ii. 關懷社會<br/>
+           iii. 活學活用 &nbsp; iv. 實驗實幹
+        </li>
+        <li>提交的「主要作品」必須為就讀書院期間所創作的原創作品</li>
+      </ul>
+
+      <h2>遴選原則</h2>
+      <ul>
+        <li>主要以作品質素及作品能否體現任何一項書院價值為判斷</li>
+        <li>同學的在學表現及學習態度為重要參考</li>
+        <li>不考慮家庭經濟狀況</li>
+        <li>不考慮學生在學期間得獎次數</li>
+      </ul>
+
+      <h2>申請獎學金程序</h2>
+      <p>（適用於自薦或老師推薦）<br/>申請人（自薦學生或被推薦學生）須：</p>
+      <ul>
+        <li>先整理好個人原創作品，細閱此「申請資訊」，及到 Google Form「申請表格」了解申請流程細節；</li>
+        <li>尋找諮詢人（雖可自薦，但鼓勵同學邀請相關及相熟老師擔任諮詢人，上限兩位）；</li>
+        <li>按照此「申請資訊」內的「提交作品指引」準備作品相關資料和了解繳交作品的格式；</li>
+        <li>在2025年5月14日 16：59截止前，到 Google Form 連結完成申請表格、諮詢表格（如有），並按「申請表格」和「提交作品指引」的指示成功上載「主要作品」及「輔助資料」（如有）；</li>
+        <li>須依照安排按時參加簡介會；</li>
+        <li>須按時參加作品設置；</li>
+        <li>留意 WhatsApp Group，如有任何跟進，同學要按時完成；</li>
+        <li>通過校內評審的入圍同學，需要準時參與校外評審面試（消息同樣會經電郵通知）。</li>
+      </ul>
+
+      <div class="cta-buttons">
+        <a href="https://docs.google.com/document/d/1cvBeMimVzQRZ2aSh3nKOp05Bq3ZQ1SbrWsItp1joG18/edit?usp=drive_link" class="btn" target="_blank">下載申請資訊</a>
+        <a href="https://forms.gle/JJ3ytaTmDNAs1RXt7" class="btn" target="_blank">前往 24/25 申請表格</a>
+        <a href="https://forms.gle/aceVe5YGyZREF8rz9" class="btn" target="_blank">前往 24/25 諮詢表格</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .content { padding: 70px 40px; background: #fff; }
+  .content-inner { max-width: 900px; margin: 0 auto; }
+  .content h2 {
+    font-size: 20px; color: #806203; letter-spacing: 4px;
+    margin-bottom: 20px; margin-top: 40px; font-weight: 500;
+    border-left: 4px solid #c9922b; padding-left: 12px;
+  }
+  .content p { font-size: 15px; line-height: 2; margin-bottom: 15px; color: #333; }
+  .content ul { list-style: none; }
+  .content li { padding: 12px 0; font-size: 15px; border-bottom: 1px solid #f0ede8; padding-left: 20px; position: relative; color: #333; line-height: 1.8; }
+  .content li::before { content: '•'; color: #806203; position: absolute; left: 0; }
+  .content a { color: #806203; text-decoration: none; }
+  .content a:hover { text-decoration: underline; }
+  .cta-buttons { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 28px;
+    background: #c9922b; color: #fff !important;
+    text-decoration: none !important; border-radius: 4px;
+    font-size: 14px; letter-spacing: 2px;
+    transition: background 0.3s;
+  }
+  .btn:hover { background: #a87a20; text-decoration: none !important; }
+  @media (max-width: 768px) {
+    .content { padding: 40px 20px; }
+    .cta-buttons { flex-direction: column; }
+  }
+</style>

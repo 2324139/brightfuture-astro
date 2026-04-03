@@ -1,0 +1,28 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `很感謝鵬程獎學金的支持。
+
+這份作品能從誕生到發表再到被認同，仿佛一切都是有可能，而且都在排著隊去讓我把它變成可能。這一個過程可能是來日無數的創作都需要重複又重複的步驟，但我相信能夠每一次都有新的可能，不同的碰撞爆發更多的創意和感染力。這次將是一個美好的開始，就像奇異點一樣，但願無數的星星都能從這裡開始放射出去，成就一個屬於我所創作的宇宙。
+
+沒有這個開始，這個奇異點真的不知道什麼時候才能誕生。`;
+const consultant = "徐柏禮的短片成熟真摯地講述一個讓人悲喜交加的故事。他講述九七回歸前一名被迫嫁來香港的內地女子，如何融入香港家庭，文化上的衝激，以及最後如何建立對香港的感情。劇本、演員處理成熟，讓人哭笑不得。黑白攝影的選擇也有效地表達年代感。主題上有嚴肅地處理過兩地人的矛盾，整體表現極為出色，完整度高。";
+const consultantTitle = "諮詢人 | Wong Cheuk Man 老師";
+const gallery = [
+  "/images/22-23/徐栢禮1.webp",
+  "/images/22-23/徐栢禮2.webp",
+  "/images/22-23/徐栢禮3.webp",
+];
+---
+<AwardeeLayout
+  title="22/23 | 徐栢禮 | 鵬程創意獎學金 BFCS"
+  name="徐栢禮"
+  englishName="Tsui Pak Lai Perry"
+  year="22/23"
+  category="錄像"
+  class="6B"
+  photo="/images/22-23/徐栢禮.webp"
+  description={description}
+  gallery={gallery}
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>

@@ -1,0 +1,24 @@
+---
+import AwardeeLayout from '../../../layouts/AwardeeLayout.astro';
+const description = `感謝鐘志平教授成立鵬程創意獎學金、感謝各位評審的肯定還有老師們的指導。這三份作品分別處理我入獄這段經驗的不同階段及面向，也作為是次經歷的美學記錄。這也是我在創意書院在學三年來對聲音和影像探索的成果。希望畢業後繼續好好努力，同時也不要太努力。`;
+const consultant = "樂堯同學一直用影像和音樂創作真誠並勇敢地回應他在當下的處境和狀態。烏龍茶同埋FROM THE VOID OF TIME分別是進監獄前後的心理狀態。樂堯積極以影像捕捉生活上最難以名狀的事情，相信影像和藝術能傳遞觀眾獨特的詩化經驗。用影像捕捉少年對社會種種的失落，又試用影像開闢更自由的天地。有效地在聲畫裡外探索，實驗性強，完成度高，且積極在美學上有所實踐。能一直將自己所關注的命題，當下的狀態，及轉化之創作的同學並不多，樂堯為其中一個。";
+const consultantTitle = "諮詢人 | Wong Cheuk Man 老師";
+const gallery = [
+  "/images/22-23/王樂堯1.webp",
+  "/images/22-23/王樂堯2.webp",
+  "/images/22-23/王樂堯3.webp",
+];
+---
+<AwardeeLayout
+  title="22/23 | 王樂堯 | 鵬程創意獎學金 BFCS"
+  name="王樂堯"
+  englishName="Wong Lok Yiu"
+  year="22/23"
+  category="錄像"
+  photo="/images/22-23/王樂堯.webp"
+  description={description}
+  gallery={gallery}
+  class="6DCA11"
+  consultant={consultant}
+  consultantTitle={consultantTitle}
+/>
