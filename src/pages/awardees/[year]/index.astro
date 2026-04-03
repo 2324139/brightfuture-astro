@@ -1,8 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import PageHero from '../../../components/PageHero.astro';
-import fs from 'fs';
-import path from 'path';
 
 export function getStaticPaths() {
   return [
@@ -17,16 +15,17 @@ export function getStaticPaths() {
 }
 
 const { year } = Astro.params;
-const dir = `/home/workspace/brightfuture-astro/src/pages/awardees/${year}`;
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.astro') && f !== 'index.astro');
+const files = await Astro.glob('../../awardees/*.astro');
+const yearFiles = files.filter(f => f.url.includes(`/${year}/`) && !f.url.endsWith('/index'));
 
-const awardees = files
+const awardees = yearFiles
   .map(f => {
-    const name = decodeURIComponent(f.replace('.astro', ''));
-    const content = fs.readFileSync(path.join(dir, f), 'utf-8');
-    const photoMatch = content.match(/photo="([^"]+)"/);
-    const categoryMatch = content.match(/category="([^"]+)"/);
-    const classMatch = content.match(/class="([^"]+)"/);
+    const urlParts = f.url.split('/');
+    const filename = urlParts[urlParts.length - 1].replace('.astro', '');
+    const name = decodeURIComponent(filename);
+    const photoMatch = f.rawContent().match(/photo="([^"]+)"/);
+    const categoryMatch = f.rawContent().match(/category="([^"]+)"/);
+    const classMatch = f.rawContent().match(/class="([^"]+)"/);
     return {
       name,
       photo: photoMatch ? photoMatch[1] : '/images/038890_8d95b32ba6fa4b9fa395f8df02846232-mv2.jpg',
