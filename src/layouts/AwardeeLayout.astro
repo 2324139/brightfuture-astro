@@ -22,40 +22,56 @@ const paragraphs = description.trim().split('\n').map(p => p.trim()).filter(p =>
 
 <Layout title={title}>
   <section class={`awardee-detail${className ? ' ' + className : ''}`}>
-    <div class="awardee-header">
-      <img src={photo} alt={name} class="avatar" />
-      <div>
-        <h2>{name}</h2>
-        {englishName && <p class="english-name">{englishName}</p>}
-        <span class="badge">{year} 得獎者</span>
-        <span class="media">{category}</span>
-        {subtitle && <p class="subtitle">{subtitle}</p>}
+    <div class="awardee-cover">
+      <img src={photo} alt={name} class="cover-img" />
+      <div class="cover-overlay">
+        <div class="cover-info">
+          <h2>{name}</h2>
+          {englishName && <p class="english-name">{englishName}</p>}
+          <span class="badge">{year} 得獎者</span>
+          <span class="media">{category}</span>
+          {subtitle && <p class="subtitle">{subtitle}</p>}
+        </div>
       </div>
     </div>
-    <div class="awardee-content">
-      {paragraphs.map(p => <p>{p}</p>)}
-    </div>
-    <div class="awardee-gallery">
-      {gallery.map(img => <img src={img} alt="作品" />)}
-    </div>
-    {consultant && (
-      <div class="awardee-consultant">
-        {consultantTitle && <p class="consultant-title">{consultantTitle}</p>}
-        <p class="consultant-quote">「{consultant}」</p>
+    <div class="awardee-body">
+      <div class="awardee-content">
+        {paragraphs.map(p => <p>{p}</p>)}
       </div>
-    )}
+      <div class="awardee-gallery">
+        {gallery.map(img => <img src={img} alt="作品" />)}
+      </div>
+      {consultant && (
+        <div class="awardee-consultant">
+          {consultantTitle && <p class="consultant-title">{consultantTitle}</p>}
+          <p class="consultant-quote">「{consultant}」</p>
+        </div>
+      )}
+    </div>
   </section>
 </Layout>
 
 <style>
-  .awardee-detail { max-width: 900px; margin: 0 auto; padding: 70px 40px; background: #fff; }
-  .awardee-header { display: flex; gap: 30px; margin-bottom: 40px; align-items: center; }
-  .avatar { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; }
-  .awardee-header h2 { font-size: 24px; color: #806203; margin: 0; letter-spacing: 4px; }
-  .english-name { font-size: 14px; color: #666; margin: 5px 0 15px; }
+  .awardee-detail { background: #fff; }
+  .awardee-cover { position: relative; width: 100%; height: 400px; overflow: hidden; }
+  .cover-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .cover-info { padding: 40px 0; color: #fff; width:900px; margin: 0 auto; }
+  .cover-info h2 { font-size: 32px; color: #fff; margin: 0 0 8px; letter-spacing: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+  .english-name { font-size: 14px; color: rgba(255,255,255,0.85); margin: 0 0 15px; }
   .badge { background: #806203; color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px; }
-  .media { color: #806203; margin-left: 15px; font-size: 14px; }
-  .subtitle { margin: 10px 0 0; font-size: 14px; color: #555; font-style: italic; }
+  .media { color: rgba(255,255,255,0.9); margin-left: 15px; font-size: 14px; }
+  .subtitle { margin: 10px 0 0; font-size: 14px; color: rgba(255,255,255,0.8); font-style: italic; }
+  .awardee-body { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
   .awardee-content { margin-bottom: 40px; }
   .awardee-content p { font-size: 15px; line-height: 2; color: #20201E; margin-bottom: 20px; }
   .awardee-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -64,7 +80,10 @@ const paragraphs = description.trim().split('\n').map(p => p.trim()).filter(p =>
   .consultant-title { font-size: 13px; color: #806203; margin-bottom: 10px; }
   .consultant-quote { font-size: 15px; line-height: 1.8; color: #333; margin: 0; }
   @media (max-width: 768px) {
-    .awardee-header { flex-direction: column; text-align: center; }
+    .awardee-cover { height: 300px; }
+    .cover-info { padding: 24px;}
+    .cover-info h2 { font-size: 24px; }
+    .awardee-body { padding: 40px 20px; }
     .awardee-gallery { grid-template-columns: 1fr; }
   }
 </style>
